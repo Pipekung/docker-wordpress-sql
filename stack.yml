@@ -25,6 +25,8 @@ services:
 
   db:
     image: mariadb:10.4-bionic
+    ports:
+      - 3306:3306
     volumes:
       - $PWD/db:/var/lib/mysql
     environment:
