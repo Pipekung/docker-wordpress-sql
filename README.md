@@ -1,6 +1,8 @@
 # Docker Wordpress SQL
 
-stack.yml
+## ... via [`docker stack deploy`](https://docs.docker.com/engine/reference/commandline/stack_deploy/) or [`docker-compose`](https://github.com/docker/compose)
+
+Example `stack.yml`
 
 ``` yml
 version: '3.1'
@@ -51,5 +53,5 @@ $ docker-compose -f stack.yml up
 
 and visit
 
-- [```http://127.0.0.1:8080 - wordpress```](http://127.0.0.1:8080)
-- [```http://127.0.0.1:8081 - phpmyadmin```](http://127.0.0.1:8081)
+- [`http://127.0.0.1:8080 - wordpress`](http://127.0.0.1:8080)
+- [`http://127.0.0.1:8081 - phpmyadmin`](http://127.0.0.1:8081)

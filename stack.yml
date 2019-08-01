@@ -3,7 +3,7 @@ version: '3.1'
 services:
 
   wordpress:
-    image: wordpress
+    image: wordpress:5.2-fpm-alpine
     ports:
       - 8080:80
     volumes:
@@ -17,7 +17,7 @@ services:
       - db
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin/phpmyadmin:4.8
     ports:
       - 8081:80
     depends_on:
