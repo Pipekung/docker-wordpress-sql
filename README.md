@@ -25,7 +25,7 @@ $ docker run -d --name phpmyadmin -p 8081:80 --link db phpmyadmin/phpmyadmin:4.8
 Example [`stack.yml`](https://github.com/Pipekung/docker-wordpress-sql/blob/master/stack.yml)
 
 ``` yml
-version: '3.7'
+version: '3.1'
 
 services:
 
