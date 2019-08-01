@@ -2,10 +2,22 @@
 
 Simple docker for setup wordpress, db and phpmyadmin.
 
-### How to use
+### How to use step by step
+
+Start mariadb first
 
 ``` console
-$ docker run -d --name wordpress -p 8080:80 -v $PWD/wordpress:/var/www/html wordpress:5.2-php7.2
+$ docker run -d --name db -v $PWD/db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mariadb:10.4-bionic
+```
+
+then start wordpress and phpmyadmin
+
+``` console
+$ docker run -d --name wordpress -p 8080:80 -v $PWD/wordpress:/var/www/html --link db wordpress:5.2-php7.2
+```
+
+``` console
+$ docker run -d --name phpmyadmin -p 8081:80 --link db phpmyadmin/phpmyadmin:4.8
 ```
 
 ### ... via [`docker stack deploy`](https://docs.docker.com/engine/reference/commandline/stack_deploy/) or [`docker-compose`](https://github.com/docker/compose)
