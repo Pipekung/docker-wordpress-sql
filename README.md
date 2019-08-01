@@ -7,7 +7,7 @@ Simple docker for setup wordpress, db and phpmyadmin.
 Start mariadb first
 
 ``` console
-$ docker run -d --name db -v $PWD/db:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=root mariadb:10.4-bionic
+$ docker run -d --name db -v $PWD/db:/var/lib/mysql -p 3306:3306 -e MYSQL_ROOT_PASSWORD=root mariadb:10.4-bionic
 ```
 
 then start wordpress and phpmyadmin
@@ -52,6 +52,8 @@ services:
 
   db:
     image: mariadb:10.4-bionic
+    ports:
+      - 3306:3306
     volumes:
       - $PWD/db:/var/lib/mysql
     environment:
