@@ -1,6 +1,6 @@
 # Docker Wordpress SQL
 
-Simple docker for building wordpress, db and phpmyadmin.
+Simple docker for setup wordpress, db and phpmyadmin.
 
 ### How to use
 
