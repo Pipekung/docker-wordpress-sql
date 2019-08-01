@@ -2,6 +2,12 @@
 
 Simple docker for building wordpress, db and phpmyadmin.
 
+### How to use
+
+``` console
+$ docker run -d --name wordpress -p 8080:80 -v $PWD/wordpress:/var/www/html wordpress:5.2-php7.2
+```
+
 ### ... via [`docker stack deploy`](https://docs.docker.com/engine/reference/commandline/stack_deploy/) or [`docker-compose`](https://github.com/docker/compose)
 
 Example [`stack.yml`](https://github.com/Pipekung/docker-wordpress-sql/blob/master/stack.yml)
