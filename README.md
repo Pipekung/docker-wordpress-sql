@@ -1,8 +1,10 @@
 # Docker Wordpress SQL
 
-## ... via [`docker stack deploy`](https://docs.docker.com/engine/reference/commandline/stack_deploy/) or [`docker-compose`](https://github.com/docker/compose)
+Simple docker for building wordpress, db and phpmyadmin.
 
-Example `stack.yml`
+### ... via [`docker stack deploy`](https://docs.docker.com/engine/reference/commandline/stack_deploy/) or [`docker-compose`](https://github.com/docker/compose)
+
+Example [`stack.yml`](https://github.com/Pipekung/docker-wordpress-sql/blob/master/stack.yml)
 
 ``` yml
 version: '3.1'
@@ -10,7 +12,7 @@ version: '3.1'
 services:
 
   wordpress:
-    image: wordpress
+    image: wordpress:5.2-php7.2
     ports:
       - 8080:80
     volumes:
@@ -24,7 +26,7 @@ services:
       - db
 
   phpmyadmin:
-    image: phpmyadmin/phpmyadmin
+    image: phpmyadmin/phpmyadmin:4.8
     ports:
       - 8081:80
     depends_on:
